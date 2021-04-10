@@ -5,15 +5,19 @@ import 'package:flutter_ecommerce_app/src/models/products.dart';
 
 import 'dart:async';
 
-Future<List<Product>> fetchAllProducts() async {
+Future<List<dynamic>> fetchAllProducts() async {
   final response = await Dio().get('https://fakestoreapi.com/products');
-  return parseProducts(response.data);
+  if(response.statusCode == 200){
+    return parseProducts(response.data);
+  }
+  return [];
 }
 
+// Parsing json data to the list models
 List<dynamic> parseProducts(responseBody) {
-  var fakeObjects =
+  var listProducts =
       responseBody.map((tagJson) => Product.fromJson(tagJson)).toList();
-  return fakeObjects;
+  return listProducts;
 }
 
 Future getCategories() async {

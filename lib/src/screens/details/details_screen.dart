@@ -23,7 +23,7 @@ class ProductDetail extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
             //color: product.color,
-            child: Image.asset(
+            child: Image.network(
               product.image,
               alignment: Alignment.centerRight,
               height: screenHeight - 100,

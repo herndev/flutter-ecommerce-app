@@ -3,7 +3,7 @@ import 'package:flutter_ecommerce_app/src/models/products.dart';
 import 'package:flutter_ecommerce_app/src/screens/details/details_screen.dart';
 import 'package:flutter_ecommerce_app/src/screens/home/components/_grid_card.dart';
 
-GridView buildProductGridView(BuildContext context, List<Product> productList) {
+GridView buildProductGridView(BuildContext context, List<dynamic> productList) {
   var orientation = MediaQuery.of(context).orientation;
   return GridView.builder(
     itemCount: productList.length,

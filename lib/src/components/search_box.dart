@@ -29,7 +29,6 @@ class SearchBox extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
-          //icon: Icon(CupertinoIcons.search, color: Colors.deepPurple,),
           hintText: 'Search',
           hintStyle: TextStyle(color: Colors.deepPurple),
           prefixIcon: Icon(CupertinoIcons.search, color: Colors.deepPurple,),

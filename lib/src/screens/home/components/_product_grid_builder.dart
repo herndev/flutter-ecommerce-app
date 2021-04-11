@@ -50,11 +50,14 @@ Card gridCardItem(context, item) {
                 style: TextStyle(fontSize: 12),
               )),
         ),
-        child: Padding(
-          padding: EdgeInsets.all(10),
-          child: Image.network(
-            item.image,
-            fit: BoxFit.contain,
+        child: Hero(
+          tag: item.id,
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Image.network(
+              item.image,
+              fit: BoxFit.contain,
+            ),
           ),
         ), //just for testing, will fill with image later
       ),

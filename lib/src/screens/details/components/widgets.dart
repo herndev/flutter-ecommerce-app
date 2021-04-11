@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/constants.dart';
 import 'package:flutter_ecommerce_app/src/models/products.dart';
+import 'package:flutter_ecommerce_app/src/screens/cart/cart_screen.dart';
 
 Container imageContainer(double imageHeight, Product product) {
   return Container(
@@ -22,7 +23,6 @@ Row thumbnailImages(product) {
   );
 }
 
-
 Row buildThumbnailRow(product) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
@@ -36,7 +36,6 @@ Row buildThumbnailRow(product) {
   );
 }
 
-
 Row buildRowBtnPrice(context, Product product) {
   return Row(
     children: [
@@ -45,24 +44,19 @@ Row buildRowBtnPrice(context, Product product) {
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
       ),
       Spacer(),
+
       ElevatedButton(
           onPressed: () {
-            // To The cart
-            print("BUY NOW");
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ProductCart()));
           },
-          child: Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-              ),
-              child: Text("BUY NOW"),
-            ),
-          ))
+          style: ElevatedButton.styleFrom(shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(30.0),
+          ),),
+          child: Text('BUY NOW', style: TextStyle(fontSize: 20))),
     ],
   );
 }
-
 
 CircleAvatar buildCircleColorAvatar(Color color) {
   return CircleAvatar(

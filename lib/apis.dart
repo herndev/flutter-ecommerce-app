@@ -59,11 +59,12 @@ void getProductByCategory(category) async {
   }
 }
 
-void getProductByLimit(limit) async {
+Future getProductByLimit(limit) async {
   try {
     var response =
         await Dio().get('https://fakestoreapi.com/products?limit=$limit');
     print(response);
+    return response;
   } catch (e) {
     print(e);
   }

@@ -47,7 +47,11 @@ class _HomePageState extends State<HomePage> {
       appBar: homeActionBar(),
       body: Padding(
         padding: EdgeInsets.all(8),
-        child: HomeBody(
+        child: fakeProducts.length == 0 ?
+        Center(
+          child: CircularProgressIndicator(),
+        ):
+        HomeBody(
           categories: categories,
           products: fakeProducts,
         ),

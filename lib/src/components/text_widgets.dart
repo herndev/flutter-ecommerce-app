@@ -30,3 +30,12 @@ TextStyle extraLargeText = GoogleFonts.ptSansCaption(
 TextStyle xxLargeText = GoogleFonts.ptSans(
   fontSize: 45,
 );
+
+ElevatedButton buildElevatedButton(label) {
+  return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(shape: new RoundedRectangleBorder(
+        borderRadius: new BorderRadius.circular(30.0),
+      ),),
+      child: Text(label, style: TextStyle(fontSize: 20)));
+}

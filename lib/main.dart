@@ -13,7 +13,7 @@ class EcommApp extends StatelessWidget {
       title: 'Flutter Ecommerce application',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.ptSansTextTheme(
           Theme.of(context).textTheme,

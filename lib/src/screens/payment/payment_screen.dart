@@ -1,34 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/src/components/text_widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'components/checkout_actionbar.dart';
+import 'components/wallet_options_list.dart';
 
 class PaymentGateway extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<PayCard> _getPaymentCards() {
-      List<PayCard> cards = [];
-      cards.add(new PayCard(
-          title: "Net Banking",
-          description: "Pay bill using card",
-          image: "assets/images/paycard.png"));
-      cards.add(new PayCard(
-          title: "Credit Card",
-          description: "Pay bill using card",
-          image: "assets/images/paycard.png"));
-      cards.add(new PayCard(
-          title: "Debit Card",
-          description: "Pay bill using card",
-          image: "assets/images/paycard.png"));
-      cards.add(new PayCard(
-          title: "Wallet pay",
-          description: "Pay bill using card",
-          image: "assets/images/paycard.png"));
-      return cards;
-    }
+    List<PayCard> paymentOptions = getPaymentOptions();
 
     return Scaffold(
-      appBar: buildAppBar(context),
+      backgroundColor: Colors.white,
+      appBar: buildCheckoutAppBar(context),
       body: Container(
         padding: EdgeInsets.only(top: 0, left: 10, right: 10),
         child: Column(
@@ -36,73 +18,33 @@ class PaymentGateway extends StatelessWidget {
           children: [
             Expanded(
                 child: ListView.builder(
-                    itemCount: _getPaymentCards().length,
+                    itemCount: paymentOptions.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Card(
-                        color: Colors.grey.shade400,
-                        child: Padding(
-                            padding: EdgeInsets.all(8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      _getPaymentCards()[index].title,
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      "Pay bill using ${_getPaymentCards()[index].title}",
-                                      style: smallText,
-                                    ),
-                                  ],
-                                ),
-                                CircleAvatar(
-                                  radius: 20,
-                                  backgroundColor: Colors.pink,
-                                  child: Image.asset(
-                                      _getPaymentCards()[index].image),
-                                )
-                              ],
-                            )),
-                      );
+                      return Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: ListTile(
+                            title: Text(
+                              paymentOptions[index].title,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              paymentOptions[index].title,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.normal),
+                            ),
+                            onTap: () => print(paymentOptions[index]),
+                            leading: Icon(Icons.credit_card,
+                                color: Colors.blueGrey, size: 30),
+                            trailing: Icon(
+                              Icons.arrow_drop_down_sharp,
+                              color: Colors.blueGrey,
+                            ),
+                          ));
                     }))
           ],
         ),
       ),
     );
   }
-
-  AppBar buildAppBar(BuildContext context) {
-    return AppBar(
-      elevation: 0,
-      backgroundColor: Colors.grey.shade200,
-      title: Text(
-        "PAYMENT",
-        style: GoogleFonts.lato(
-          fontSize: 20,
-          color: Colors.black87,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      centerTitle: true,
-      leading: GestureDetector(
-          onTap: () => {Navigator.pop(context)},
-          child: Icon(
-            CupertinoIcons.back,
-            color: Colors.black38,
-          )),
-    );
-  }
-}
-
-class PayCard {
-  String title;
-  String description;
-  String image;
-
-  PayCard({this.title, this.description, this.image});
 }

@@ -51,10 +51,9 @@ class _ProductCategoryState extends State<ProductCategory> {
                   decoration: BoxDecoration(
                       border: position == selectedIndex
                           ? Border.all(
-                          color: Colors.blue,
+                          color: Colors.deepPurple,
                           width: 2
-                      )
-                          : Border.all(
+                      ): Border.all(
                         color: Colors.grey.shade300,
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(8))),
@@ -71,39 +70,3 @@ class _ProductCategoryState extends State<ProductCategory> {
     );
   }
 }
-
-
-// Container homeCategory(List categories) {
-//   int selectedIndex;
-//   return Container(
-//     height: 50,
-//     child: ListView.builder(
-//         itemCount: categories.length,
-//         scrollDirection: Axis.horizontal,
-//         itemBuilder: (context, position) {
-//           return InkWell(
-//             onTap: (){
-//               print(categories[position]);
-//               // setState(() {
-//               //   selectedIndex = position;
-//               // });
-//             },
-//             child: Card(
-//               margin: EdgeInsets.all(4),
-//               shadowColor: Colors.blue,
-//               child: Padding(
-//                 padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-//                 child: Center(
-//                   child: Text(
-//                     categories[position].toString().toUpperCase(),
-//                     style: TextStyle(fontSize: 12,
-//                         fontWeight: FontWeight.bold,
-//                         color: Colors.deepPurple),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           );
-//         }),
-//   );
-// }

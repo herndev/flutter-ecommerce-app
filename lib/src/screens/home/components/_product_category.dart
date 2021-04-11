@@ -44,23 +44,26 @@ class _ProductCategoryState extends State<ProductCategory> {
               } ,
               child: Padding(
                 padding: const EdgeInsets.all(4),
-                child: Container(
-                  height: 60,
-                  width: 130,
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                      border: position == selectedIndex
-                          ? Border.all(
-                          color: Colors.deepPurple,
-                          width: 2
-                      ): Border.all(
-                        color: Colors.grey.shade300,
+                child: Card(
+                  elevation: 2,
+                  child: Container(
+                    height: 60,
+                    width: 130,
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        border: position == selectedIndex
+                            ? Border.all(
+                            color: Colors.deepPurple,
+                            width: 1
+                        ): Border.all(
+                          color: Colors.grey.shade300,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                    child: Center(
+                      child: Text(
+                        categories[position].toString().toUpperCase(),
+                        style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.deepPurple),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(8))),
-                  child: Center(
-                    child: Text(
-                      categories[position].toString().toUpperCase(),
-                      style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.deepPurple),
                     ),
                   ),
                 ),

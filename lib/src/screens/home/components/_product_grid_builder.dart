@@ -28,7 +28,7 @@ GridView buildProductGridView(BuildContext context, List<dynamic> products) {
 
 Card gridCardItem(context, item) {
   return Card(
-    elevation: 0,
+    elevation: 2,
     child: GestureDetector(
       onTap: (){
         print(item.title);

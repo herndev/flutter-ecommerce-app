@@ -1,6 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchBox extends StatelessWidget {
   const SearchBox({
@@ -13,24 +12,27 @@ class SearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(sDefaultPadding),
+      margin: EdgeInsets.all(8),
       padding: EdgeInsets.symmetric(
-        horizontal: sDefaultPadding,
-        vertical: sDefaultPadding / 4, // 5 top and bottom
+        horizontal: 8,
+        vertical: 4, // 5 top and bottom
       ),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.4),
-        borderRadius: BorderRadius.circular(12),
+        color: Colors.grey.shade100,
+        borderRadius: BorderRadius.circular(8),
       ),
       child: TextField(
+        textCapitalization: TextCapitalization.words,
         onChanged: onChanged,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.deepPurple),
+        cursorColor: Colors.deepPurple,
         decoration: InputDecoration(
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
-          icon: SvgPicture.asset("assets/icons/search.svg"),
+          //icon: Icon(CupertinoIcons.search, color: Colors.deepPurple,),
           hintText: 'Search',
-          hintStyle: TextStyle(color: Colors.white),
+          hintStyle: TextStyle(color: Colors.deepPurple),
+          prefixIcon: Icon(CupertinoIcons.search, color: Colors.deepPurple,),
         ),
       ),
     );

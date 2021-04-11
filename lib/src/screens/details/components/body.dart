@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ecommerce_app/src/models/products.dart';
-import 'package:flutter_ecommerce_app/src/screens/details/components/app_bar.dart';
-import 'package:flutter_ecommerce_app/src/screens/details/components/box_decoration.dart';
-import 'package:flutter_ecommerce_app/src/screens/home/components/title_rating.dart';
+import 'widgets.dart';
+import '../../home/components/title_rating.dart';
 
 class DetailBody extends StatefulWidget {
   const DetailBody({
@@ -45,102 +44,72 @@ class _DetailBodyState extends State<DetailBody> {
               SizedBox(height: 10),
               Text(product.description),
               SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  clipImageRect(widget.product.image),
-                  SizedBox(width: 10),
-                  clipImageRect(widget.product.image),
-                  SizedBox(width: 10),
-                  clipImageRect(widget.product.image),
-                ],
-              ),
+              buildThumbnailRow(widget.product),
               SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('Color'),
-                  SizedBox(width: 10),
-                  CircleAvatar(
-                    backgroundColor: Colors.greenAccent[400],
-                    radius: 20,
-                  ),
-                  SizedBox(width: 10),
-                  CircleAvatar(
-                    backgroundColor: Colors.red.shade300,
-                    radius: 20,
-                  ),
-                  SizedBox(width: 10),
-                  CircleAvatar(
-                    backgroundColor: Colors.indigo.shade300,
-                    radius: 20,
-                  ),
-                  Spacer(),
-                  Container(
-                    height: 40,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.indigo.shade100,
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                print(_itemCount);
-                                setState(() {
-                                  _itemCount = (_itemCount + 1);
-                                });
-                              },
-                              child: Icon(CupertinoIcons.plus_circle)),
-                          Text('$_itemCount'),
-                          InkWell(
-                              onTap: () {
-                                print(_itemCount);
-                                setState(() {
-                                  if (_itemCount != 1) {
-                                    _itemCount = (_itemCount - 1);
-                                  }
-                                });
-                              },
-                              child: Icon(CupertinoIcons.minus_circle))
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              buildRowColors(),
               SizedBox(height: 20),
-              Row(
-                children: [
-                  Text(
-                    '\$ ${product.price}',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  ),
-                  Spacer(),
-                  ElevatedButton(
-                      onPressed: () {
-                        // To The cart
-                        print("BUY NOW");
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Text("BUY NOW"),
-                        ),
-                      ))
-                ],
-              )
+              buildRowBtnPrice(context, product)
             ],
           ),
         ),
       ]),
     );
   }
+
+
+
+  Row buildRowColors() {
+    return Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text('Color'),
+                SizedBox(width: 10),
+                buildCircleColorAvatar(Colors.greenAccent[400]),
+                SizedBox(width: 10),
+                buildCircleColorAvatar(Colors.red.shade300),
+                SizedBox(width: 10),
+                buildCircleColorAvatar(Colors.indigo.shade300),
+                Spacer(),
+                Container(
+                  height: 40,
+                  width: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.indigo.shade100,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                            onTap: () {
+                              print(_itemCount);
+                              setState(() {
+                                _itemCount = (_itemCount + 1);
+                              });
+                            },
+                            child: Icon(CupertinoIcons.plus_circle)),
+                        Text('$_itemCount'),
+                        InkWell(
+                            onTap: () {
+                              print(_itemCount);
+                              setState(() {
+                                if (_itemCount != 1) {
+                                  _itemCount = (_itemCount - 1);
+                                }
+                              });
+                            },
+                            child: Icon(CupertinoIcons.minus_circle))
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            );
+  }
+
+
+
+
 }

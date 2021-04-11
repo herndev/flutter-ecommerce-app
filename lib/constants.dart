@@ -7,7 +7,7 @@ const sSecondaryColor = Color(0xFFFFA41B);
 const sTextColor = Color(0xFF000839);
 const STextLightColor = Color(0xFF747474);
 const sBlueColor = Color(0xFF40BAD5);
-const sDefaultPadding = 20.0;
+const sDefaultColorPadding = 15.0;
 
 // our default Shadow
 const sDefaultShadow = BoxShadow(

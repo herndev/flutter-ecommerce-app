@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/src/screens/home/components/_category_row.dart';
-import 'package:flutter_ecommerce_app/src/screens/home/components/_grid_view.dart';
+import 'package:flutter_ecommerce_app/src/screens/home/components/_product_category.dart';
+import 'package:flutter_ecommerce_app/src/screens/home/components/_grid_builder.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -17,11 +17,8 @@ class HomeBody extends StatelessWidget {
     return Column(
       children: <Widget>[
         SizedBox(height: 20),
-        //buildSearchRow(),
-        //SizedBox(height: 20),
         homeCategory(categories),
         SizedBox(height: 10),
-        // Load all products
         Flexible(child: buildProductGridView(context, products))
       ],
     );

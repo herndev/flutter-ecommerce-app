@@ -31,7 +31,7 @@ class _DetailBodyState extends State<DetailBody> {
         Container(
           height: imageHeight,
           child: Hero(
-            tag: widget.product.id,
+              tag: widget.product.id,
               child: Image.network(widget.product.image)),
         ),
         Container(
@@ -115,46 +115,31 @@ class _DetailBodyState extends State<DetailBody> {
               SizedBox(height: 20),
               Row(
                 children: [
-                  Text('\$ ${product.price}', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                  Text(
+                    '\$ ${product.price}',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
                   Spacer(),
-                  ElevatedButton(onPressed: (){
-                    // To The cart
-                    print("BUY NOW");
-                  }, child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
+                  ElevatedButton(
+                      onPressed: () {
+                        // To The cart
+                        print("BUY NOW");
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                          ),
+                          child: Text("BUY NOW"),
                         ),
-                      child: Text("BUY NOW"),
-                    ),
-                  ))
+                      ))
                 ],
               )
             ],
           ),
         ),
-        // Container(
-        //   decoration: BoxDecoration(
-        //     shape: BoxShape.rectangle,
-        //     color: Colors.white
-        //   ),
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(20.0),
-        //     child: Row(
-        //       children: [
-        //         Text('\$ ${product.price}', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-        //         Spacer(),
-        //         ElevatedButton(onPressed: (){}, child: Container(
-        //           child: Text("BUY NOW"),
-        //         ))
-        //       ],
-        //     ),
-        //   ),
-        // )
       ]),
     );
   }
-
-
 }

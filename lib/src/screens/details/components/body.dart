@@ -29,11 +29,12 @@ class _DetailBodyState extends State<DetailBody> {
       padding: const EdgeInsets.all(20.0),
       child: ListView(shrinkWrap: true, children: [
         Container(
-          height: imageHeight,
+          height: (imageHeight-30),
           child: Hero(
               tag: widget.product.id,
               child: Image.network(widget.product.image)),
         ),
+        SizedBox(height: 20),
         Container(
           padding: EdgeInsets.all(20),
           decoration: boxDecoration(),

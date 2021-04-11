@@ -13,7 +13,7 @@ class ProductDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: detailAppBar(context),
-        backgroundColor: Colors.grey.shade50,
+        backgroundColor: Colors.white,
         body: DetailBody(product: product));
   }
 }

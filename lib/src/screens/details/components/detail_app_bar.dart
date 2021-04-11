@@ -23,8 +23,8 @@ AppBar detailAppBar(context) {
         child: CircleAvatar(
             backgroundColor: Colors.grey.shade300,
             child: Icon(
-              CupertinoIcons.shopping_cart,
-              color: Colors.blueGrey,
+              CupertinoIcons.heart_fill,
+              color: Colors.red.shade300,
               size: 30,
             )),
       ),

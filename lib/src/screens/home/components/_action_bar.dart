@@ -43,13 +43,6 @@ AppBar homeActionBar(){
             child: Icon(CupertinoIcons.cart,
                 size: 30, color: Colors.deepPurple),
           )),
-      Padding(
-          padding: EdgeInsets.all(8),
-          child: InkWell(
-            onTap: ()=> print("Search.."),
-            child: Icon(CupertinoIcons.search,
-                size: 30, color: Colors.deepPurple),
-          ))
       //Icon(CupertinoIcons.search, size: 30, color: Colors.indigoAccent)
     ],
   );

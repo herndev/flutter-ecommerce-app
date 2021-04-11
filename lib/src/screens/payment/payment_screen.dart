@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'components/btn_bottom_checkout.dart';
 import 'components/checkout_actionbar.dart';
 import 'components/wallet_options_list.dart';
 
@@ -21,27 +22,24 @@ class PaymentGateway extends StatelessWidget {
                     itemCount: paymentOptions.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: ListTile(
+                        padding: EdgeInsets.all(8.0),
+                        child: ExpansionTile(
                             title: Text(
-                              paymentOptions[index].title,
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
-                            subtitle: Text(
-                              paymentOptions[index].title,
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.normal),
-                            ),
-                            onTap: () => print(paymentOptions[index]),
-                            leading: Icon(Icons.credit_card,
-                                color: Colors.blueGrey, size: 30),
-                            trailing: Icon(
-                              Icons.arrow_drop_down_sharp,
-                              color: Colors.blueGrey,
-                            ),
-                          ));
-                    }))
+                          paymentOptions[index].title,
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                          children: [
+                            buildPaymentList(paymentOptions, index),
+                            buildPaymentList(paymentOptions, 3),
+                            buildPaymentList(paymentOptions, 2),
+                          ],
+                        ),
+
+                        //buildPaymentList(paymentOptions, index)
+                      );
+                    })),
+            alignCheckoutBtnBottom(context)
           ],
         ),
       ),

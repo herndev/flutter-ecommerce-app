@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/src/screens/payment/components/wallet_options_list.dart';
 
 
 AppBar buildCheckoutAppBar(BuildContext context) {
@@ -18,5 +19,25 @@ AppBar buildCheckoutAppBar(BuildContext context) {
           Navigator.pop(context);
         },
         child: Icon(Icons.arrow_back, color: Colors.indigo,)),
+  );
+}
+
+
+ListTile buildPaymentList(List<PayCard> paymentOptions, int index) {
+  return ListTile(
+    title: Text(
+      paymentOptions[index].title,
+      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+    ),
+    subtitle: Text(
+      paymentOptions[index].title,
+      style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+    ),
+    onTap: () => print(paymentOptions[index]),
+    leading: Icon(Icons.credit_card, color: Colors.blueGrey, size: 30),
+    trailing: Icon(
+      Icons.arrow_drop_down_sharp,
+      color: Colors.blueGrey,
+    ),
   );
 }

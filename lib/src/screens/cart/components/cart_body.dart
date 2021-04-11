@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/src/screens/cart/components/btn_bottom.dart';
 import '../../../../apis.dart';
 import 'banner_container.dart';
 import '../../payment/payment_screen.dart';
@@ -45,59 +46,13 @@ class _CartBodyState extends State<CartBody> {
                           itemCount: cartItems.length,
                           itemBuilder: (BuildContext ctxt, int index) =>
                               buildBody(ctxt, index))),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      height: 80,
-                      color: Colors.white,
-                      child: Row(
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Total',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 14,
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                '\$ 128.00',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                              )
-                            ],
-                          ),
-                          Spacer(),
-                          ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            PaymentGateway()));
-                              },
-                              style: ElevatedButton.styleFrom(
-                                shape: new RoundedRectangleBorder(
-                                  borderRadius: new BorderRadius.circular(30.0),
-                                ),
-                              ),
-                              child: Text('Checkout',
-                                  style: TextStyle(fontSize: 20)))
-                        ],
-                      ),
-                    ),
-                  ),
+                  buildAlignBtnBottom(context),
                 ],
               ),
             ),
           );
   }
+
 
   buildBody(BuildContext ctxt, int index) {
     return Card(

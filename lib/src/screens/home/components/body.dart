@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/src/screens/home/components/_product_category.dart';
-import 'package:flutter_ecommerce_app/src/screens/home/components/_grid_builder.dart';
+import 'package:flutter_ecommerce_app/src/screens/home/components/_product_grid_builder.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({

@@ -17,7 +17,7 @@ class HomeBody extends StatelessWidget {
     return Column(
       children: <Widget>[
         SizedBox(height: 20),
-        homeCategory(categories),
+        ProductCategory(categories: categories),
         SizedBox(height: 10),
         Flexible(child: buildProductGridView(context, products))
       ],

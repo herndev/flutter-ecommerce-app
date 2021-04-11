@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/src/models/products.dart';
 import 'package:flutter_ecommerce_app/src/screens/details/details_screen.dart';
 import 'package:flutter_ecommerce_app/src/screens/home/components/_grid_card.dart';
 
-GridView buildProductGridView(BuildContext context, List<dynamic> productList) {
+GridView buildProductGridView(BuildContext context, List<dynamic> products) {
   var orientation = MediaQuery.of(context).orientation;
   return GridView.builder(
-    itemCount: productList.length,
+    itemCount: products.length,
     padding: EdgeInsets.only(top: 0),
     reverse: false,
     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -18,10 +17,10 @@ GridView buildProductGridView(BuildContext context, List<dynamic> productList) {
               context,
               MaterialPageRoute(
                   builder: (context) => ProductDetail(
-                        product: productList[index],
+                        product: products[index],
                       ))),
         },
-        //child: gridCardItem(productList[index]),
+        child: gridCardItem(products[index]),
       );
     },
   );

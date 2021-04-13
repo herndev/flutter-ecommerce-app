@@ -25,19 +25,18 @@ GridView buildProductGridView(BuildContext context, List<dynamic> products) {
   );
 }
 
-
 Card gridCardItem(context, item) {
   return Card(
     elevation: 2,
     child: GestureDetector(
-      onTap: (){
+      onTap: () {
         print(item.title);
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) => ProductDetail(
-                  product: item,
-                )));
+                      product: item,
+                    )));
       },
       child: new GridTile(
         footer: Container(
@@ -64,4 +63,3 @@ Card gridCardItem(context, item) {
     ),
   );
 }
-

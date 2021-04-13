@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/src/components/text_widgets.dart';
 
 AppBar buildCartAppBar(BuildContext context) {
   return AppBar(
@@ -13,10 +14,6 @@ AppBar buildCartAppBar(BuildContext context) {
     ),),
 
     centerTitle: false,
-    leading: InkWell(
-      onTap: (){
-        Navigator.pop(context);
-      },
-        child: Icon(Icons.arrow_back, color: Colors.indigo,)),
+    leading: backNavIcon(context),
   );
 }

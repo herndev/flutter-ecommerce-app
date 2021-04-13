@@ -1,22 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/src/components/text_widgets.dart';
 
 AppBar detailAppBar(context) {
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.white,
-    leading: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: InkWell(
-        onTap: ()=> Navigator.pop(context),
-        child: CircleAvatar(
-            backgroundColor: Colors.grey.shade300,
-            child: Icon(
-              Icons.arrow_back_sharp,
-              color: Colors.blueGrey,
-            )),
-      ),
-    ),
+    leading: backNavIcon(context),
     actions: [
       Padding(
         padding: const EdgeInsets.all(8.0),
@@ -31,3 +21,4 @@ AppBar detailAppBar(context) {
     ],
   );
 }
+

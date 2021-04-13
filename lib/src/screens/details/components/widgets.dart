@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/constants.dart';
 import 'package:flutter_ecommerce_app/src/models/products.dart';
@@ -44,15 +45,16 @@ Row buildRowBtnPrice(context, Product product) {
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
       ),
       Spacer(),
-
       ElevatedButton(
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ProductCart()));
           },
-          style: ElevatedButton.styleFrom(shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(30.0),
-          ),),
+          style: ElevatedButton.styleFrom(
+            shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(30.0),
+            ),
+          ),
           child: Text('BUY NOW', style: TextStyle(fontSize: 20))),
     ],
   );
@@ -67,11 +69,15 @@ CircleAvatar buildCircleColorAvatar(Color color) {
 
 BoxDecoration boxDecoration() {
   return BoxDecoration(
-      color: Colors.grey.shade200,
-      border: Border.all(
-        color: Colors.grey.shade300,
-      ),
-      borderRadius: BorderRadius.all(Radius.circular(8)));
+    color: Colors.grey.shade200,
+    border: Border.all(
+      color: Colors.grey.shade300,
+    ),
+    borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30)
+    ),
+  );
 }
 
 ClipRRect clipImageRect(image) {

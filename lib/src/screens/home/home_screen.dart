@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_ecommerce_app/apis.dart';
 import 'package:flutter_ecommerce_app/src/screens/home/components/body.dart';
+
 import 'components/_action_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,10 +21,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // adding the products here
-    // You can get products here from api also and render the views
-    // accordingly
-
     getCategories().then((items) {
       setState(() {
         categories = items;
@@ -36,6 +33,7 @@ class _HomePageState extends State<HomePage> {
         fakeProducts = items;
       });
     });
+
     super.initState();
   }
 
@@ -44,17 +42,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: null,
       backgroundColor: Colors.white,
-      appBar: homeActionBar(),
+      appBar: homeActionBar(context),
       body: Padding(
         padding: EdgeInsets.all(8),
-        child: fakeProducts.length == 0 ?
-        Center(
-          child: CircularProgressIndicator(),
-        ):
-        HomeBody(
-          categories: categories,
-          products: fakeProducts,
-        ),
+        child: fakeProducts.length == 0
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : HomeBody(
+                categories: categories,
+                products: fakeProducts,
+              ),
       ),
     );
   }

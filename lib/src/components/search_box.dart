@@ -15,7 +15,7 @@ class SearchBox extends StatelessWidget {
       margin: EdgeInsets.all(8),
       padding: EdgeInsets.symmetric(
         horizontal: 8,
-        vertical: 4, // 5 top and bottom
+        vertical: 4,
       ),
       decoration: BoxDecoration(
         color: Colors.grey.shade100,
@@ -31,7 +31,10 @@ class SearchBox extends StatelessWidget {
           focusedBorder: InputBorder.none,
           hintText: 'Search',
           hintStyle: TextStyle(color: Colors.deepPurple),
-          prefixIcon: Icon(CupertinoIcons.search, color: Colors.deepPurple,),
+          prefixIcon: Icon(
+            CupertinoIcons.search,
+            color: Colors.deepPurple,
+          ),
         ),
       ),
     );

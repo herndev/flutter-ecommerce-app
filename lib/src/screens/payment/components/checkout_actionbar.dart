@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/src/components/text_widgets.dart';
 import 'package:flutter_ecommerce_app/src/screens/payment/components/wallet_options_list.dart';
 
 
@@ -14,11 +15,7 @@ AppBar buildCheckoutAppBar(BuildContext context) {
       ),),
 
     centerTitle: false,
-    leading: InkWell(
-        onTap: (){
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.arrow_back, color: Colors.indigo,)),
+    leading: backNavIcon(context),
   );
 }
 

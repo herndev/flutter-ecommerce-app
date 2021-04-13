@@ -8,6 +8,7 @@ const sTextColor = Color(0xFF000839);
 const STextLightColor = Color(0xFF747474);
 const sBlueColor = Color(0xFF40BAD5);
 const sDefaultColorPadding = 15.0;
+const profileThumb = "https://image.flaticon.com/icons/png/512/891/891399.png";
 
 // our default Shadow
 const sDefaultShadow = BoxShadow(

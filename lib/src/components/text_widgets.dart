@@ -22,7 +22,7 @@ TextStyle largeText = GoogleFonts.ptSans(
   fontWeight: FontWeight.bold,
 );
 
-TextStyle extraLargeText = GoogleFonts.ptSansCaption(
+TextStyle extraLargeText = GoogleFonts.ptSans(
   fontSize: 35,
   fontWeight: FontWeight.bold,
 );
@@ -38,4 +38,19 @@ ElevatedButton buildElevatedButton(label) {
         borderRadius: new BorderRadius.circular(30.0),
       ),),
       child: Text(label, style: TextStyle(fontSize: 20)));
+}
+
+Padding backNavIcon(context) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: InkWell(
+      onTap: ()=> Navigator.pop(context),
+      child: CircleAvatar(
+          backgroundColor: Colors.grey.shade300,
+          child: Icon(
+            Icons.arrow_back_sharp,
+            color: Colors.blueGrey,
+          )),
+    ),
+  );
 }

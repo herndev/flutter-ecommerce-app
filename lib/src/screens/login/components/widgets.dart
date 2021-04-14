@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/src/components/text_widgets.dart';
 
@@ -73,12 +74,30 @@ Text buildRowCreateNew() {
   );
 }
 
-Text buildTextLoginNow() {
-  return Text(
-    "Let's sign you in.",
-    style: TextStyle(
-    fontSize: 25,
-    fontWeight: FontWeight.bold,
-  ),
-  );
+SizedBox buildTextLoginNow() {
+   return SizedBox(
+     width: 250.0,
+       child: AnimatedTextKit(
+         repeatForever: true,
+         animatedTexts: [
+           TypewriterAnimatedText("Let's sign you in", textStyle: TextStyle(
+             color: Colors.indigo,
+             fontWeight: FontWeight.bold,
+             fontSize: 35
+           )),
+         ],
+         onTap: () {
+           print("Tap Event");
+         },
+       ),
+   );
+
+
+  //   Text(
+  //   "Let's sign you in.",
+  //   style: TextStyle(
+  //   fontSize: 25,
+  //   fontWeight: FontWeight.bold,
+  // ),
+  // );
 }

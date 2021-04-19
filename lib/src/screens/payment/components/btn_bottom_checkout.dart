@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/src/screens/payment/payment_screen.dart';
 import 'package:flutter_ecommerce_app/src/screens/reciept/reciept_page.dart';
 
 Align alignCheckoutBtnBottom(BuildContext context) {
@@ -34,10 +33,8 @@ Align alignCheckoutBtnBottom(BuildContext context) {
           Spacer(),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ReceiptPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ReceiptPage()));
               },
               style: ElevatedButton.styleFrom(
                 shape: new RoundedRectangleBorder(

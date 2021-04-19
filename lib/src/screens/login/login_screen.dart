@@ -15,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
+    print('deviceWidth $deviceWidth and deviceHeight $deviceHeight');
     return GestureDetector(
       onTap: () {
         if (FocusScope.of(context).isFirstFocus) {

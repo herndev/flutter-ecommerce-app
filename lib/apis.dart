@@ -33,6 +33,7 @@ Future getProducts() async {
     var response = await Dio().get('https://fakestoreapi.com/products');
     final jsonData = json.decode(response.data);
     var someValue = Product.fromJson(jsonData);
+    print(someValue);
     return response;
   } catch (e) {
     print(e);
@@ -68,4 +69,3 @@ void getProductById(id) async {
     print(e);
   }
 }
-

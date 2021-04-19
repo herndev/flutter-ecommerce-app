@@ -15,7 +15,6 @@ Hero buildHeroThumbnail(profileThumb) {
   );
 }
 
-
 Center buildSkipBtn() {
   return Center(
     child: Text(
@@ -75,23 +74,22 @@ Text buildRowCreateNew() {
 }
 
 SizedBox buildTextLoginNow() {
-   return SizedBox(
-     width: 250.0,
-       child: AnimatedTextKit(
-         repeatForever: true,
-         animatedTexts: [
-           TypewriterAnimatedText("Let's sign you in", textStyle: TextStyle(
-             color: Colors.indigo,
-             fontWeight: FontWeight.bold,
-             fontSize: 35
-           )),
-         ],
-         onTap: () {
-           print("Tap Event");
-         },
-       ),
-   );
-
+  return SizedBox(
+    width: 250.0,
+    child: AnimatedTextKit(
+      repeatForever: true,
+      animatedTexts: [
+        TypewriterAnimatedText("Let's sign you in",
+            textStyle: TextStyle(
+                color: Colors.indigo,
+                fontWeight: FontWeight.bold,
+                fontSize: 35)),
+      ],
+      onTap: () {
+        print("Tap Event");
+      },
+    ),
+  );
 
   //   Text(
   //   "Let's sign you in.",

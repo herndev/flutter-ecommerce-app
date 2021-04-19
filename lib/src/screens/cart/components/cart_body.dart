@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app/src/screens/cart/components/btn_bottom.dart';
 import '../../../../apis.dart';
 import 'banner_container.dart';
-import '../../payment/payment_screen.dart';
 
 class CartBody extends StatefulWidget {
   @override
@@ -52,7 +51,6 @@ class _CartBodyState extends State<CartBody> {
             ),
           );
   }
-
 
   buildBody(BuildContext ctxt, int index) {
     return Card(

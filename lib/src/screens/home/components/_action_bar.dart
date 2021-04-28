@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/constants.dart';
 
+import '../../../../constants.dart';
+import '../../cart/cart_screen.dart';
 import '../../login/login_screen.dart';
+import '../../notification/notification.dart';
 
 AppBar homeActionBar(context) {
   return AppBar(
@@ -27,12 +29,12 @@ AppBar homeActionBar(context) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Amazon',
+            'Buy. Think. Grow',
             style: TextStyle(
                 fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue),
           ),
           Text(
-            'Welcome Shailesh',
+            'A few clicks is all it takes.',
             style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
@@ -46,14 +48,24 @@ AppBar homeActionBar(context) {
       Padding(
           padding: EdgeInsets.all(8),
           child: InkWell(
-            onTap: () => print("Notification.."),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotificationScreen()),
+              );
+            },
             child:
                 Icon(CupertinoIcons.bell, size: 30, color: Colors.deepPurple),
           )),
       Padding(
           padding: EdgeInsets.all(8),
           child: InkWell(
-            onTap: () => print("Cart.."),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductCart()),
+              );
+            },
             child:
                 Icon(CupertinoIcons.cart, size: 30, color: Colors.deepPurple),
           )),

@@ -33,8 +33,27 @@ Row buildThumbnailRow(product) {
       clipImageRect(product.image),
       SizedBox(width: 10),
       clipImageRect(product.image),
+      Spacer(),
+      rowRating()
     ],
   );
+}
+
+Row rowRating() {
+  return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.star,
+          color: Colors.amber,
+          size: 20,
+        ),
+        SizedBox(width: 4),
+        Text('4.7',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+      ],
+    );
 }
 
 Row buildRowBtnPrice(context, Product product) {

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/src/screens/home/components/camera_app.dart';
 
 class SearchBox extends StatelessWidget {
   const SearchBox({
@@ -27,15 +28,32 @@ class SearchBox extends StatelessWidget {
         style: TextStyle(color: Colors.deepPurple),
         cursorColor: Colors.deepPurple,
         decoration: InputDecoration(
-          enabledBorder: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          hintText: 'Search',
-          hintStyle: TextStyle(color: Colors.deepPurple),
-          prefixIcon: Icon(
-            CupertinoIcons.search,
-            color: Colors.deepPurple,
-          ),
-        ),
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            hintText: 'Search',
+            hintStyle: TextStyle(color: Colors.deepPurple),
+            prefixIcon: Icon(
+              CupertinoIcons.search,
+              color: Colors.deepPurple,
+            ),
+            suffixIcon: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CameraApp()),
+                );
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Center(
+                  child: Icon(
+                    CupertinoIcons.camera,
+                    color: Colors.deepPurple,
+                    size: 35,
+                  ),
+                ),
+              ),
+            )),
       ),
     );
   }

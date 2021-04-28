@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_ecommerce_app/apis.dart';
-import 'package:flutter_ecommerce_app/src/screens/home/components/body.dart';
 
 import 'components/_action_bar.dart';
+import 'components/body.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -47,7 +47,10 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(8),
         child: fakeProducts.length == 0
             ? Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  backgroundColor: Colors.indigo,
+                  strokeWidth: 1,
+                ),
               )
             : HomeBody(
                 categories: categories,

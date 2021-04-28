@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_app/src/screens/home/home_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_ecommerce_app/src/screens/home/home_screen.dart' show HomePage;
+import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 
 void main() {
-  runApp(EcommApp());
+  runApp(ShoppingApp());
 }
 
-class EcommApp extends StatelessWidget {
+class ShoppingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Ecommerce application',
+      title: 'Flutter shopping application',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.indigo,

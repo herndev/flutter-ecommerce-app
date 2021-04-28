@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ecommerce_app/src/models/products.dart';
-
-import '../../home/components/title_rating.dart';
 import 'widgets.dart';
 
 class DetailBody extends StatefulWidget {
@@ -42,7 +40,7 @@ class _DetailBodyState extends State<DetailBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TitleAndRating(product: product),
+              buildTitleText(product),
               SizedBox(height: 10),
               Text(product.description),
               SizedBox(height: 20),
@@ -55,6 +53,15 @@ class _DetailBodyState extends State<DetailBody> {
           ),
         ),
       ]),
+    );
+  }
+
+  Text buildTitleText(Product product) {
+    return Text(
+      product.title,
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
     );
   }
 
